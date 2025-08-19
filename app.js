@@ -4,8 +4,12 @@ let listaAmigos = []
 function adicionarAmigo() {
     // acessa o conteúdo digitado pela usuário.
     let nome = document.getElementById('amigo').value;
-    
- // Adiciona o nome do amigo para o final da lista.
+    if (nome.trim() === '') {
+        // SE o campo estiver vazio, exibe um alerta.
+        alert('Por favor, digite um nome válido.');
+        return;
+    }
+     // Adiciona o nome do amigo para o final da lista.
     listaAmigos.push(nome);
 
     // Atualiza o elemento com id 'listaAmigos' para mostrar os nomes e separa com um hifem
